@@ -14,7 +14,6 @@ function [x, y, z] = orbit(t, a, ml0, e, I, omega, Omega, T)
     end
 
     Theta = 2*atan(sqrt((1+e)/(1-e)).*tan(E/2));
-    r = a * (1 - e * cos(E));
 
     r = a * (1 - e * cos(E));
     x = r .* (cos(Omega) .* cos(omega+Theta) - sin(Omega) .* sin(omega+Theta) .* cos(I));
