@@ -8,15 +8,17 @@ using Valve.VR.InteractionSystem;
 public class Zooming : MonoBehaviour
 {
     //public SteamVR_Input_Sources handType;
-    private Hand hand;
-    public SteamVR_Action_Boolean gripAction;
-    private SteamVR_Input_Sources handRight = SteamVR_Input_Sources.RightHand;
-    private SteamVR_Input_Sources handLeft = SteamVR_Input_Sources.LeftHand;
+    
+    public SteamVR_Input_Sources handRightsource;
+    public SteamVR_Input_Sources handLeftsource;
+
+    public Hand handRight;
+    public Hand handLeft;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class Zooming : MonoBehaviour
     {
         //Valve.VR.EVRButtonId.k_EButton_Grip;
         
-        if (gripAction.GetState(handRight) && gripAction.GetState(handLeft))
+        if (handRight.grabGripAction.GetState(handRightsource) && handLeft.grabGripAction.GetState(handLeftsource))
         {
             scaleSolarSystem();
             Debug.Log("The two grips are pressed");
@@ -33,6 +35,7 @@ public class Zooming : MonoBehaviour
 
     private void scaleSolarSystem()
     {
+              
         //Vector3 prePositionRight = 
     }
 }
