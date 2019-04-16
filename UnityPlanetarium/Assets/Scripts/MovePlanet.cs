@@ -37,6 +37,7 @@ public class MovePlanet : MonoBehaviour
 	{
         float year = (float)(DateTime.Now-_startDate).TotalSeconds / 15;
 		var pos = _orbit.Position(year);
+        pos.Scale(transform.parent.localScale);
         transform.position = transform.parent.position + pos;
     }
 }
