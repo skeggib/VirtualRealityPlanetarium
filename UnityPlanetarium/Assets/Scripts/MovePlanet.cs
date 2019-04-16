@@ -14,7 +14,7 @@ public class MovePlanet : MonoBehaviour
     public float LongitudeOfAscendingNode;
     public float OrbitalPeriod;
 
-    public float Year { get; set; }
+    public float Year { get; private set; }
 
     private DateTime _startDate;
     private Orbit _orbit;
