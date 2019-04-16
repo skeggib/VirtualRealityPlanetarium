@@ -6,8 +6,8 @@ using System;
 
 public class OrbitLine : MonoBehaviour
 {
-    public float xposition=0.0f;
-    public float yposition = 0.0f;
+    public GameObject Planet;
+    
     private DateTime dateStart;
 
     private Orbit _orbit;
@@ -15,25 +15,30 @@ public class OrbitLine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        var movePlanet = Planet.GetComponent<MovePlanet>();
+
         dateStart = DateTime.Now;
-        var elements = new OrbitalElements(1, 0, 0, 0, 0, 0, 1);
+        var elements = new OrbitalElements(
+            movePlanet.MajorRadius,
+            movePlanet.MeanLongitudeAtEpoch,
+            movePlanet.Eccentricity,
+            movePlanet.InclinationToElliptic,
+            movePlanet.LongitudeOfPerihelion,
+            movePlanet.LongitudeOfAscendingNode,
+            movePlanet.OrbitalPeriod
+        );
 		_orbit = new Orbit(elements);
         var pointsToDraw = _orbit.OrbitPoints(100);
         LineRenderer line = GetComponent<LineRenderer>();
-        line.positionCount = pointsToDraw.Length;
+        line.positionCount = pointsToDraw.Length+1;
         for(int i = 0; i < pointsToDraw.Length; i++)
-        {
-            line.SetPosition(i, new Vector3(pointsToDraw[i].X, pointsToDraw[i].Z, pointsToDraw[i].Y));
-        }
+            line.SetPosition(i, pointsToDraw[i]);
+        line.SetPosition(line.positionCount-1, pointsToDraw[0]);
     }
 
     // Update is called once per frame
     void Update()
 	{
 
-        //float annee=(float)(DateTime.Now-dateStart).TotalSeconds/5;
-		//var pos = _orbit.Position(annee);
-        //transform.position=new Vector3(pos.X,pos.Z, pos.Y);
-		
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Numerics;
 
 namespace CelestialMechanics
 {
@@ -22,7 +21,7 @@ namespace CelestialMechanics
         /// </summary>
         /// <param name="time">Time offset relative to J2000 (1st January 2000) in years.</param>
         /// <returns>The position of the celestial body.</returns>
-        public Vector3 Position(float time)
+        public UnityEngine.Vector3 Position(float time)
         {
             var a = Elements.MajorRadius;
             var lambda = Elements.MeanLongitudeAtEpoch;
@@ -41,12 +40,11 @@ namespace CelestialMechanics
             var Theta = 2.0 * Math.Atan(Math.Sqrt((1.0+e)/(1.0-e)) * Math.Tan(E/2.0));
             var r = a * (1.0 - e * Math.Cos(E));
 
-            var position = new Vector3
-            {
-                X = Convert.ToSingle(r * (Math.Cos(Omega) * Math.Cos(omega + Theta) - Math.Sin(Omega) * Math.Sin(omega + Theta) * Math.Cos(I))),
-                Y = Convert.ToSingle(r * (Math.Sin(Omega) * Math.Cos(omega + Theta) + Math.Cos(Omega) * Math.Sin(omega + Theta) * Math.Cos(I))),
-                Z = Convert.ToSingle(r * Math.Sin(omega + Theta) * Math.Sin(I))
-            };
+            var position = new UnityEngine.Vector3(
+                Convert.ToSingle(r * (Math.Cos(Omega) * Math.Cos(omega + Theta) - Math.Sin(Omega) * Math.Sin(omega + Theta) * Math.Cos(I))),
+                Convert.ToSingle(r * Math.Sin(omega + Theta) * Math.Sin(I)),
+                Convert.ToSingle(r * (Math.Sin(Omega) * Math.Cos(omega + Theta) + Math.Cos(Omega) * Math.Sin(omega + Theta) * Math.Cos(I)))
+            );
 
             return position;
         }
@@ -56,7 +54,7 @@ namespace CelestialMechanics
         /// </summary>
         /// <param name="time">The time at which the position will be computed.</param>
         /// <returns>The position of the celestial body.</returns>
-        public Vector3 Position(DateTime time)
+        public UnityEngine.Vector3 Position(DateTime time)
             => Position(Convert.ToSingle((time - J2000).TotalDays / ExactDaysInYear));
 
         /// <summary>
@@ -64,9 +62,9 @@ namespace CelestialMechanics
         /// </summary>
         /// <param name="pointsNumber">The number of points to compute.</param>
         /// <returns>The computed points.</returns>
-        public Vector3[] OrbitPoints(int pointsNumber)
+        public UnityEngine.Vector3[] OrbitPoints(int pointsNumber)
         {
-            var points = new List<Vector3>();
+            var points = new List<UnityEngine.Vector3>();
             for (float t = 0; t < Elements.OrbitalPeriod; t += Elements.OrbitalPeriod / pointsNumber)
                 points.Add(Position(t));
             return points.ToArray();
