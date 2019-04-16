@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 03085fb9721de494c8206eee7d68cfc5, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,40 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!21 &297964997
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &373863223 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7980469000001505707, guid: d45541dadfcd7bd46bd67416a63ceca3,
@@ -219,16 +185,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1194763236231098729, guid: d45541dadfcd7bd46bd67416a63ceca3,
-        type: 3}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 1357418829}
-    - target: {fileID: 1675815059486254528, guid: d45541dadfcd7bd46bd67416a63ceca3,
-        type: 3}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 1357418829}
     - target: {fileID: 475702327491521243, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: Camera
@@ -239,6 +195,16 @@ PrefabInstance:
       propertyPath: Planet
       value: 
       objectReference: {fileID: 373863223}
+    - target: {fileID: 1194763236231098729, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1357418829}
+    - target: {fileID: 1675815059486254528, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1357418829}
     - target: {fileID: 8272567515563940286, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: Camera
@@ -324,11 +290,11 @@ PrefabInstance:
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 297964997}
+      objectReference: {fileID: 1974956970}
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2013439692}
+      objectReference: {fileID: 1365613540}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 3}
 --- !u!1 &1354433668 stripped
@@ -403,108 +369,7 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1049841466}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1437039801 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2690437687978721815, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 773192602}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1437039802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437039801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea90fb891d41003418139540183bf557, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handRightsource: 2
-  handLeftsource: 1
-  handRight: {fileID: 1755442981}
-  handLeft: {fileID: 1354433670}
---- !u!1 &1755442978 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1049841466}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1755442980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755442978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f908d7559c1c4134aa33d5906bbb412a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  universe: {fileID: 1437039801}
---- !u!114 &1755442981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755442978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  otherHand: {fileID: 0}
-  handType: 2
-  trackedObject: {fileID: 1755442982}
-  grabPinchAction:
-    actionPath: /actions/default/in/GrabPinch
-    needsReinit: 0
-  grabGripAction:
-    actionPath: /actions/default/in/GrabGrip
-    needsReinit: 0
-  hapticAction:
-    actionPath: /actions/default/out/Haptic
-    needsReinit: 0
-  uiInteractAction:
-    actionPath: /actions/default/in/InteractUI
-    needsReinit: 0
-  useHoverSphere: 1
-  hoverSphereTransform: {fileID: 0}
-  hoverSphereRadius: 0.05
-  hoverLayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  hoverUpdateInterval: 0.1
-  useControllerHoverComponent: 1
-  controllerHoverComponent: tip
-  controllerHoverRadius: 0.075
-  useFingerJointHover: 1
-  fingerJointHover: 10
-  fingerJointHoverRadius: 0.025
-  objectAttachmentPoint: {fileID: 0}
-  noSteamVRFallbackCamera: {fileID: 0}
-  noSteamVRFallbackMaxDistanceNoItem: 10
-  noSteamVRFallbackMaxDistanceWithItem: 0.5
-  renderModelPrefab: {fileID: 0}
-  showDebugText: 0
-  spewDebugText: 0
-  showDebugInteractables: 0
---- !u!114 &1755442982 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114000010110554832, guid: 4d293c8e162f3874b982baadd71153d2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1049841466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755442978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a5fb0ca93b55ef4b8d54b512b103341, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!43 &2013439692
+--- !u!43 &1365613540
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -664,3 +529,138 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1437039801 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2690437687978721815, guid: d45541dadfcd7bd46bd67416a63ceca3,
+    type: 3}
+  m_PrefabInstance: {fileID: 773192602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1437039802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437039801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea90fb891d41003418139540183bf557, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handRightsource: 2
+  handLeftsource: 1
+  handRight: {fileID: 1755442981}
+  handLeft: {fileID: 1354433670}
+--- !u!1 &1755442978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1049841466}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1755442980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755442978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f908d7559c1c4134aa33d5906bbb412a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  universe: {fileID: 1437039801}
+--- !u!114 &1755442981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755442978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e3e4511966ba94d8ba0b98c6c62f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherHand: {fileID: 0}
+  handType: 2
+  trackedObject: {fileID: 1755442982}
+  grabPinchAction:
+    actionPath: /actions/default/in/GrabPinch
+    needsReinit: 0
+  grabGripAction:
+    actionPath: /actions/default/in/GrabGrip
+    needsReinit: 0
+  hapticAction:
+    actionPath: /actions/default/out/Haptic
+    needsReinit: 0
+  uiInteractAction:
+    actionPath: /actions/default/in/InteractUI
+    needsReinit: 0
+  useHoverSphere: 1
+  hoverSphereTransform: {fileID: 0}
+  hoverSphereRadius: 0.05
+  hoverLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  hoverUpdateInterval: 0.1
+  useControllerHoverComponent: 1
+  controllerHoverComponent: tip
+  controllerHoverRadius: 0.075
+  useFingerJointHover: 1
+  fingerJointHover: 10
+  fingerJointHoverRadius: 0.025
+  objectAttachmentPoint: {fileID: 0}
+  noSteamVRFallbackCamera: {fileID: 0}
+  noSteamVRFallbackMaxDistanceNoItem: 10
+  noSteamVRFallbackMaxDistanceWithItem: 0.5
+  renderModelPrefab: {fileID: 0}
+  showDebugText: 0
+  spewDebugText: 0
+  showDebugInteractables: 0
+--- !u!114 &1755442982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114000010110554832, guid: 4d293c8e162f3874b982baadd71153d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1049841466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755442978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5fb0ca93b55ef4b8d54b512b103341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!21 &1974956970
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

@@ -236,6 +236,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 498893771511846156, guid: ad060fc45e7cc71409e6011ff4613a10,
+        type: 3}
+      propertyPath: Planet
+      value: 
+      objectReference: {fileID: 7980469000001505707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad060fc45e7cc71409e6011ff4613a10, type: 3}
 --- !u!4 &2109942965576113396 stripped
@@ -411,6 +416,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2690437687978721812}
     m_Modifications:
+    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: m_Name
+      value: Venus
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -481,16 +496,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
-        type: 3}
-      propertyPath: m_Name
-      value: Venus
-      objectReference: {fileID: 0}
-    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5477582155213000752, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -531,6 +536,11 @@ PrefabInstance:
       propertyPath: OrbitalPeriod
       value: 0.615
       objectReference: {fileID: 0}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 2690437687978721815}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17b52d163ddc7941917bd429e9aead0, type: 3}
 --- !u!1 &7980468999419692269 stripped
@@ -552,6 +562,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2690437687978721812}
     m_Modifications:
+    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: m_Name
+      value: Mercury
+      objectReference: {fileID: 0}
     - target: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -622,11 +637,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
-        type: 3}
-      propertyPath: m_Name
-      value: Mercury
-      objectReference: {fileID: 0}
     - target: {fileID: 5477582155213000752, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -667,8 +677,19 @@ PrefabInstance:
       propertyPath: OrbitalPeriod
       value: 0.241
       objectReference: {fileID: 0}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 2690437687978721815}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17b52d163ddc7941917bd429e9aead0, type: 3}
+--- !u!1 &7980469000001505707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2690437688131033022}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &63624114233332122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
@@ -682,6 +703,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2690437687978721812}
     m_Modifications:
+    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: m_Name
+      value: Earth
+      objectReference: {fileID: 0}
+    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -752,16 +783,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.1
       objectReference: {fileID: 0}
-    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
-        type: 3}
-      propertyPath: m_Name
-      value: Earth
-      objectReference: {fileID: 0}
-    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5477582155213000752, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -782,6 +803,11 @@ PrefabInstance:
       propertyPath: LongitudeOfPerihelion
       value: 102.93
       objectReference: {fileID: 0}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 2690437687978721815}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17b52d163ddc7941917bd429e9aead0, type: 3}
 --- !u!1 &7980469000198611270 stripped
@@ -803,6 +829,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2690437687978721812}
     m_Modifications:
+    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: m_Name
+      value: Mars
+      objectReference: {fileID: 0}
     - target: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -873,11 +904,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.099999
       objectReference: {fileID: 0}
-    - target: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
-        type: 3}
-      propertyPath: m_Name
-      value: Mars
-      objectReference: {fileID: 0}
     - target: {fileID: 5477582155213000752, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -918,6 +944,11 @@ PrefabInstance:
       propertyPath: OrbitalPeriod
       value: 1.881
       objectReference: {fileID: 0}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 2690437687978721815}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17b52d163ddc7941917bd429e9aead0, type: 3}
 --- !u!1 &7980468998808680988 stripped
