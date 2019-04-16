@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107227711017886499}
   - component: {fileID: 2107227711017886496}
-  - component: {fileID: 2107227711017886498}
+  - component: {fileID: 498893771511846156}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -125,7 +125,7 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 0
   m_Loop: 0
---- !u!114 &2107227711017886498
+--- !u!114 &498893771511846156
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2107227711017886497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70bd93a2067e877469eed09f0ab21000, type: 3}
+  m_Script: {fileID: 11500000, guid: d05a6ff82f988b645bae84930ef15471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xposition: 0
