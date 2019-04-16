@@ -52,14 +52,19 @@ public class Zooming : MonoBehaviour
 
         if (zooming)
         {
-            scaleSolarSystem();
+            float nextDistanceControllers = Vector3.Distance(handLeft.transform.position, handRight.transform.position);
+            float scale = (nextDistanceControllers / currentDistanceControllers);
+
+            Debug.Log("scale = " + scale);
+
+            this.transform.position = new Vector3(scale * transform.localScale.x, scale * transform.localScale.y, scale * transform.localScale.z);
+            //scaleSolarSystem();
         }
     }
 
     private void scaleSolarSystem()
     {
         //Debug.Log("Left hand position : " + handLeft.transform.position + " ; Right hand position : " + handRight.transform.position);
-        
         float nextDistanceControllers = Vector3.Distance(handLeft.transform.position, handRight.transform.position);
         float scale = (nextDistanceControllers / currentDistanceControllers);
 
