@@ -40,8 +40,8 @@ public class OrbitLine : MonoBehaviour
             lineRenderer.positionCount = pointsToDraw.Length+1;
             for(int i = 0; i < pointsToDraw.Length; i++)
                 lineRenderer.SetPosition(i, pointsToDraw[i]);
-            lineRenderer.SetPosition(lineRenderer.positionCount-1, Planet.transform.position);
-            var distance = Vector3.Distance(Planet.transform.position, Camera.transform.position);
+            lineRenderer.SetPosition(lineRenderer.positionCount-1, Planet.transform.localPosition);
+            var distance = Vector3.Distance(Planet.transform.localPosition, Camera.transform.localPosition);
             lineRenderer.startWidth = distance / 1000;
             lineRenderer.endWidth = distance / 300;
         }

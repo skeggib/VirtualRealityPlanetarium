@@ -7,7 +7,7 @@ using System;
 public class GrabCamera : MonoBehaviour
 {
     public Camera Camera;
-
+    public GameObject World;
     public float GrabDistance = 1;
 
     public bool Grabbing { get; private set; }
@@ -16,23 +16,22 @@ public class GrabCamera : MonoBehaviour
 
     void Start()
     {
-        _lastPosition = transform.position;
+        _lastPosition = transform.localPosition;
     }
 
     void Update()
     {
-        var currentPosition = transform.position;
         if (!(Camera is null) &&
-            Vector3.Distance(currentPosition, Camera.transform.position) < GrabDistance &&
-            currentPosition != _lastPosition)
+            !(World is null) &&
+            Vector3.Distance(transform.position, Camera.transform.position) < GrabDistance)
         {
             Grabbing = true;
-            Camera.transform.position += currentPosition - _lastPosition;
+            World.transform.position -= transform.localPosition - _lastPosition;
         }
         else
         {
             Grabbing = false;
         }
-        _lastPosition = currentPosition;
+        _lastPosition = transform.localPosition;
     }
 }
