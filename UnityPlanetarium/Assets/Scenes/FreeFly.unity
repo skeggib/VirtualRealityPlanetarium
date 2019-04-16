@@ -285,5 +285,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 475702327491521243, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Planet
+      value: 
+      objectReference: {fileID: 7980469000001505707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d45541dadfcd7bd46bd67416a63ceca3, type: 3}
+--- !u!1 &7980469000001505707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7980469000001505707, guid: d45541dadfcd7bd46bd67416a63ceca3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2690437688267708206}
+  m_PrefabAsset: {fileID: 0}
