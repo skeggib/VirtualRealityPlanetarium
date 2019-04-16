@@ -14,6 +14,8 @@ public class MovePlanet : MonoBehaviour
     public float LongitudeOfAscendingNode;
     public float OrbitalPeriod;
 
+    public float Year { get; set; }
+
     private DateTime _startDate;
     private Orbit _orbit;
 
@@ -35,8 +37,8 @@ public class MovePlanet : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        float year = (float)(DateTime.Now-_startDate).TotalSeconds / 15;
-		var pos = _orbit.Position(year);
+        Year = (float)(DateTime.Now-_startDate).TotalSeconds / 15;
+		var pos = _orbit.Position(Year);
         pos.Scale(transform.parent.localScale);
         transform.position = transform.parent.position + pos;
     }

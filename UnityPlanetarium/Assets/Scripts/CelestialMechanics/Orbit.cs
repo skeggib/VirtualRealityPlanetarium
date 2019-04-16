@@ -69,5 +69,19 @@ namespace CelestialMechanics
                 points.Add(Position(t));
             return points.ToArray();
         }
+
+        /// <summary>
+        /// Computes a given number of points on an orbit before a given time.
+        /// </summary>
+        /// <param name="time">Time offset relative to J2000 (1st January 2000) in years.</param>
+        /// <param name="pointsNumber">The number of points to compute.</param>
+        /// <returns>The computed points.</returns>
+        public UnityEngine.Vector3[] OrbitPoints(float time, float duration, int pointsNumber)
+        {
+            var points = new List<UnityEngine.Vector3>();
+            for (float t = time - duration; t <= time; t += Elements.OrbitalPeriod / pointsNumber)
+                points.Add(Position(t));
+            return points.ToArray();
+        }
     }
 }
