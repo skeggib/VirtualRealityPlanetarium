@@ -218,6 +218,12 @@ MonoBehaviour:
   _enableSpeedAcceleration: 0
   _speedAccelerationFactor: 1.5
   _initPositonButton: 114
+--- !u!1 &833068673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2690437687978721815, guid: d45541dadfcd7bd46bd67416a63ceca3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2690437688267708206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2690437688267708206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,17 +239,17 @@ PrefabInstance:
     - target: {fileID: 2690437687978721812, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 2690437687978721812, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.332
       objectReference: {fileID: 0}
     - target: {fileID: 2690437687978721812, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 2690437687978721812, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
@@ -335,21 +341,41 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: 1881241673337351017, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 833068673}
     - target: {fileID: 1881241673799865752, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 1881241673799865752, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 833068673}
+    - target: {fileID: 1881241674260568286, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 534669904}
     - target: {fileID: 1881241674260568286, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
-      propertyPath: Camera
+      propertyPath: World
       value: 
-      objectReference: {fileID: 534669904}
+      objectReference: {fileID: 833068673}
     - target: {fileID: 1881241674566856755, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: Camera
       value: 
       objectReference: {fileID: 534669904}
+    - target: {fileID: 1881241674566856755, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: World
+      value: 
+      objectReference: {fileID: 833068673}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d45541dadfcd7bd46bd67416a63ceca3, type: 3}
 --- !u!1 &7980469000001505707 stripped

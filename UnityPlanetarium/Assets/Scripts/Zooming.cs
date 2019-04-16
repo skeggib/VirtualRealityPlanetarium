@@ -15,6 +15,12 @@ public class Zooming : MonoBehaviour
     public Hand handRight;
     public Hand handLeft;
 
+    bool zooming = false;
+
+    Vector3 currentCenterControllerPosition;
+    float currentDistanceControllers;
+    Vector3 currentScale;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,14 +34,39 @@ public class Zooming : MonoBehaviour
         
         if (handRight.grabGripAction.GetState(handRightsource) && handLeft.grabGripAction.GetState(handLeftsource))
         {
+            //Debug.Log("The two grips are pressed");
+
+            currentScale = transform.localScale;
+            currentCenterControllerPosition = Vector3.Lerp(handLeft.transform.position, handRight.transform.position, 0.5f);
+            currentDistanceControllers = Vector3.Distance(handLeft.transform.position, handRight.transform.position);
+
+            zooming = true;
+        }
+
+        if (!handRight.grabGripAction.GetState(handRightsource) || !handLeft.grabGripAction.GetState(handLeftsource))
+        {
+            //Debug.Log("The two grips are Unpressed");
+
+            zooming = false;
+        }
+
+        if (zooming)
+        {
             scaleSolarSystem();
-            Debug.Log("The two grips are pressed");
         }
     }
 
     private void scaleSolarSystem()
     {
-              
+        //Debug.Log("Left hand position : " + handLeft.transform.position + " ; Right hand position : " + handRight.transform.position);
+        
+        float nextDistanceControllers = Vector3.Distance(handLeft.transform.position, handRight.transform.position);
+        float scale = (nextDistanceControllers / currentDistanceControllers);
+
+        Debug.Log("scale = " + scale);
+
+        transform.localScale = new Vector3(scale * transform.localScale.x, scale * transform.localScale.y, scale * transform.localScale.z);
+
         //Vector3 prePositionRight = 
     }
 }
