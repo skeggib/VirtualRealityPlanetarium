@@ -23,10 +23,12 @@ public class GrabCamera : MonoBehaviour
     {
         if (!(Camera is null) &&
             !(World is null) &&
-            Vector3.Distance(transform.position, Camera.transform.position) < GrabDistance)
+            Vector3.Distance(transform.position, Camera.transform.position) < GrabDistance * World.transform.localScale.x)
         {
             Grabbing = true;
-            World.transform.position -= transform.localPosition - _lastPosition;
+            var translation = transform.localPosition - _lastPosition;
+            translation.Scale(World.transform.localScale);
+            World.transform.position -= translation;
         }
         else
         {

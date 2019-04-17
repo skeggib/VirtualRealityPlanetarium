@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using System;
 
 [RequireComponent(typeof(Camera))]
 public class FreeFlyCamera : MonoBehaviour
@@ -54,6 +56,7 @@ public class FreeFlyCamera : MonoBehaviour
     private Vector3 _initPosition;
     private Vector3 _initRotation;
 
+    public List<GameObject> Objects;
 
     private void Start()
     {
@@ -117,20 +120,37 @@ public class FreeFlyCamera : MonoBehaviour
             Vector3 deltaPosition = Vector3.zero;
             float currentSpeed = _movementSpeed;
 
-            if (Input.GetKey(KeyCode.W))
-                deltaPosition += transform.forward;
+            GameObject closestPanet = Objects[0];
+            float closestDistance = Vector3.Distance(closestPanet.transform.position, transform.position);
+            for (int i = 1; i < Objects.Count; i++)
+            {
+                var distance = Vector3.Distance(Objects[i].transform.position, transform.position);
+                if (distance < closestDistance)
+                {
+                    closestPanet = Objects[i];
+                    closestDistance = distance;
+                }
+            }
+            double factor = 1 / (1 + Math.Exp(-7 * (closestDistance - 0.5)));
+            currentSpeed *= (float)factor;
+
+            if (Input.GetKey(KeyCode.Z))
+                deltaPosition += new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
 
             if (Input.GetKey(KeyCode.S))
-                deltaPosition -= transform.forward;
+                deltaPosition -= new Vector3(transform.forward.x, 0, transform.forward.z).normalized;
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.Q))
                 deltaPosition -= transform.right;
 
             if (Input.GetKey(KeyCode.D))
                 deltaPosition += transform.right;
 
+            if (Input.GetKey(KeyCode.Space))
+                deltaPosition += new Vector3(0, 1, 0);
+
             if (Input.GetKey(KeyCode.LeftShift))
-                currentSpeed = _boostedSpeed;
+                deltaPosition -= new Vector3(0, 1, 0);
 
             // Calc acceleration
             if (_enableSpeedAcceleration)
