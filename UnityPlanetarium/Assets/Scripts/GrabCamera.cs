@@ -10,7 +10,7 @@ public class GrabCamera : MonoBehaviour
     public GameObject World;
     public float GrabDistance = 1;
 
-    public bool Grabbing { get; private set; }
+    public bool IsGrabbing { get; private set; }
 
     private Vector3 _lastPosition;
 
@@ -23,14 +23,16 @@ public class GrabCamera : MonoBehaviour
     {
         if (!(Camera is null) &&
             !(World is null) &&
-            Vector3.Distance(transform.position, Camera.transform.position) < GrabDistance)
+            Vector3.Distance(transform.position, Camera.transform.position) < GrabDistance * World.transform.localScale.x)
         {
-            Grabbing = true;
-            World.transform.position -= transform.localPosition - _lastPosition;
+            IsGrabbing = true;
+            var translation = transform.localPosition - _lastPosition;
+            translation.Scale(World.transform.localScale);
+            World.transform.position -= translation;
         }
         else
         {
-            Grabbing = false;
+            IsGrabbing = false;
         }
         _lastPosition = transform.localPosition;
     }

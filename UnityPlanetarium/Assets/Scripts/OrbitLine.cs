@@ -32,22 +32,23 @@ public class OrbitLine : MonoBehaviour
     void Update()
 	{
         var lineRenderer = GetComponent<LineRenderer>();
-        var grabCamera = Planet.GetComponent<GrabCamera>();
-        if (grabCamera is null || !grabCamera.Grabbing)
-        {
+        // var grabCamera = Planet.GetComponent<GrabCamera>();
+        // if (grabCamera is null || !grabCamera.Grabbing)
+        // {
             var movePlanet = Planet.GetComponent<MovePlanet>();
-            var pointsToDraw = _orbit.OrbitPoints(movePlanet.Year, movePlanet.OrbitalPeriod * 0.3f, 100);
+            var distance = Vector3.Distance(Planet.transform.position, Camera.transform.position);
+            var pointsToDraw = _orbit.OrbitPoints(movePlanet.Year, movePlanet.OrbitalPeriod * 0.3f, 1000);
             lineRenderer.positionCount = pointsToDraw.Length+1;
             for(int i = 0; i < pointsToDraw.Length; i++)
                 lineRenderer.SetPosition(i, pointsToDraw[i]);
             lineRenderer.SetPosition(lineRenderer.positionCount-1, Planet.transform.localPosition);
-            var distance = Vector3.Distance(Planet.transform.localPosition, Camera.transform.localPosition);
-            lineRenderer.startWidth = distance / 1000;
+            var startSize = distance / 1000;
+            lineRenderer.startWidth = startSize;
             lineRenderer.endWidth = distance / 300;
-        }
-        else
-        {
-            lineRenderer.positionCount = 0;
-        }
+        // }
+        // else
+        // {
+        //     lineRenderer.positionCount = 0;
+        // }
     }
 }

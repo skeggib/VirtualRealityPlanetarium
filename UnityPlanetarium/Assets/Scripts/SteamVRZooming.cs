@@ -5,7 +5,7 @@ using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
 
-public class Zooming : MonoBehaviour
+public class SteamVRZooming : MonoBehaviour
 {
     //public SteamVR_Input_Sources handType;
     
