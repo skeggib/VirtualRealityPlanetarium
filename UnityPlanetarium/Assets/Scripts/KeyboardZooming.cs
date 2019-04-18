@@ -23,7 +23,7 @@ public class KeyboardZooming : MonoBehaviour
     {
         GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
-        var pivot = grabbingPlanet?.transform.position ?? Camera.transform.position;
+        var pivot = grabbingPlanet?.transform.position ?? transform.position;
 
         var one = new Vector3(1, 1, 1);
         var scale = Time.deltaTime * 3;
