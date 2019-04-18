@@ -260,6 +260,8 @@ MonoBehaviour:
   - {fileID: 985181427}
   Camera: {fileID: 534669904}
   Light: {fileID: 1379422302}
+  MaxScale: 5000
+  MinScale: 0.1
 --- !u!1 &985181427 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7980468998808680988, guid: d45541dadfcd7bd46bd67416a63ceca3,
@@ -283,6 +285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SolarSystem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1125668216357150464, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: m_Range
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2690437687978721812, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
@@ -434,11 +441,6 @@ PrefabInstance:
       propertyPath: World
       value: 
       objectReference: {fileID: 833068673}
-    - target: {fileID: 1125668216357150464, guid: d45541dadfcd7bd46bd67416a63ceca3,
-        type: 3}
-      propertyPath: m_Range
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2819596639465982581, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: m_Enabled
