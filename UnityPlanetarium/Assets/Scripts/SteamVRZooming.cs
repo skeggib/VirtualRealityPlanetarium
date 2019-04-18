@@ -41,39 +41,43 @@ public class SteamVRZooming : MonoBehaviour
         
         if (handRight.grabGripAction.GetState(handRightsource) && handLeft.grabGripAction.GetState(handLeftsource))
         {
-            //Debug.Log("The two grips are pressed");
-
             initialhandLeftPosition = handLeft.transform.position; // initial first hand position
-            initialhandRightPosition = handRight.trackedObject.transform.position; // initial second hand position
+            initialhandRightPosition = handRight.transform.position; // initial second hand position
 
-            initialObjectRotation = this.transform.rotation;
+            Debug.Log("initialhandLeftPosition = " + initialhandLeftPosition);
+            Debug.Log("initialhandRightPosition = " + initialhandRightPosition);
 
-            initialObjectDirection = this.transform.position - (initialhandLeftPosition + initialhandRightPosition) * 0.5f;
+            // initialObjectRotation = transform.rotation;
+
+            // initialObjectDirection = transform.position - (initialhandLeftPosition + initialhandRightPosition) * 0.5f;
 
             //
 
-            currentScale = this.transform.localScale;
+            currentScale = transform.localScale;
             currentCenterControllerPosition = Vector3.Lerp(handLeft.transform.position, handRight.transform.position, 0.5f);
-            currentDistanceControllers = Vector3.Distance(handLeft.transform.position, handRight.transform.position);
+            currentDistanceControllers = Vector3.Distance(handLeft.transform.localPosition, handRight.transform.localPosition);
+            Debug.Log("currentDistanceControllers = " + currentDistanceControllers);
 
             zooming = true;
         }
 
         if (!handRight.grabGripAction.GetState(handRightsource) || !handLeft.grabGripAction.GetState(handLeftsource))
         {
-            //Debug.Log("The two grips are Unpressed");
-
             zooming = false;
         }
 
         if (zooming)
         {
-            float nextDistanceControllers = Vector3.Distance(handLeft.transform.position, handRight.transform.position);
+            float nextDistanceControllers = Vector3.Distance(handLeft.transform.localPosition, handRight.transform.localPosition);
             float scale = (nextDistanceControllers / currentDistanceControllers);
+
+            Debug.Log("nextDistanceControllers = " + nextDistanceControllers);
 
             Debug.Log("scale = " + scale);
 
-            this.transform.position = new Vector3(scale * transform.localScale.x, scale * transform.localScale.y, scale * transform.localScale.z);
+            transform.localScale.Scale(new Vector3(scale,scale,scale));
+
+            //transform.position = new Vector3(scale * transform.localScale.x, scale * transform.localScale.y, scale * transform.localScale.z);
             //scaleSolarSystem();
         }
     }
