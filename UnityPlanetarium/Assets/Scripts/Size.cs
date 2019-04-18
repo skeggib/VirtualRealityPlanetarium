@@ -11,9 +11,8 @@ public class Size : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var scale = SizeKm / AstronomicalUnit;
+        var scale = SizeKm / AstronomicalUnit * 1000;
         transform.localScale = new Vector3(scale, scale, scale);
-        Debug.Log($"{name}: {SizeKm} => {scale}");
     }
 
     // Update is called once per frame
