@@ -45,6 +45,8 @@ public class OrbitLine : MonoBehaviour
             var startSize = distance / 1000;
             lineRenderer.startWidth = startSize;
             lineRenderer.endWidth = distance / 300;
+            lineRenderer.startColor = new Color(1, 1, 1, 0);
+            lineRenderer.endColor = new Color(1, 1, 1, 1);
         // }
         // else
         // {
