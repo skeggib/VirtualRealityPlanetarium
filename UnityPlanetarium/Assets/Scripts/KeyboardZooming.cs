@@ -7,6 +7,8 @@ public class KeyboardZooming : MonoBehaviour
     public List<GameObject> Planets;
     public Camera Camera;
     public Light Light;
+    public float MaxScale = 5000;
+    public float MinScale = 0.1f;
 
     private float _startRange;
 
@@ -19,16 +21,7 @@ public class KeyboardZooming : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject grabbingPlanet = null;
-        foreach (var planet in Planets)
-        {
-            var grabCamera = planet.GetComponent<GrabCamera>();
-            if (!(grabCamera is null) && grabCamera.Grabbing)
-            {
-                grabbingPlanet = planet;
-                break;
-            }
-        }
+        GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
         var pivot = grabbingPlanet?.transform.position ?? Camera.transform.position;
 
@@ -37,13 +30,13 @@ public class KeyboardZooming : MonoBehaviour
         var mult = new Vector3(scale, scale, scale);
         if (Input.GetKey(KeyCode.O))
             ScaleAround(transform, pivot, one + mult);
-        else if (Input.GetKey(KeyCode.I) && transform.localScale.x > 0.1)
+        else if (Input.GetKey(KeyCode.I))
             ScaleAround(transform, pivot, one - mult);
 
-        if (transform.localScale.x > 5000)
-            ScaleAround(transform, pivot, new Vector3(5000 / transform.localScale.x, 5000 / transform.localScale.x, 5000 / transform.localScale.x));
-        if (transform.localScale.x < 0.1)
-            ScaleAround(transform, pivot, new Vector3(0.1f / transform.localScale.x, 0.1f / transform.localScale.x, 0.1f / transform.localScale.x));
+        if (transform.localScale.x > MaxScale)
+            ScaleAround(transform, pivot, new Vector3(MaxScale / transform.localScale.x, MaxScale / transform.localScale.y, MaxScale / transform.localScale.z));
+        if (transform.localScale.x < MinScale)
+            ScaleAround(transform, pivot, new Vector3(MinScale / transform.localScale.x, MinScale / transform.localScale.y, MinScale / transform.localScale.z));
         
         Light.range = _startRange * transform.localScale.x;
     }
