@@ -12,6 +12,7 @@ public class motionGrabbing : MonoBehaviour
 
     Vector3 positionPre;
     Vector3 positionUniverse;
+    public List<GameObject> Planets;
 
     bool moving = false;
 
@@ -31,7 +32,8 @@ public class motionGrabbing : MonoBehaviour
         //axe rouge = x
         if (SteamVR_Actions._default.GrabPinch.GetLastStateDown(hand.handType))
         {
-            positionUniverse = universe.transform.position;
+            GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
+            positionUniverse = grabbingPlanet?.transform.position ?? universe.transform.position;
             positionPre = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
             moving = true;
@@ -45,7 +47,7 @@ public class motionGrabbing : MonoBehaviour
         {
             Vector3 move = transform.position - positionPre;
 
-            universe.transform.position = positionUniverse + move * 2;
+            universe.transform.position = positionUniverse + move;
         }
     }
 }

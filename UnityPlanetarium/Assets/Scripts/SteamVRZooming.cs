@@ -12,8 +12,6 @@ public class SteamVRZooming : MonoBehaviour
     public SteamVR_Input_Sources handRightsource;
     public SteamVR_Input_Sources handLeftsource;
 
-    public Camera camera;
-
     public Hand handRight;
     public Hand handLeft;
 
@@ -24,6 +22,8 @@ public class SteamVRZooming : MonoBehaviour
     Vector3 initialScale;
 
     Vector3 initialPosition;
+
+    public List<GameObject> Planets;
 
 
     // Start is called before the first frame update
@@ -37,14 +37,13 @@ public class SteamVRZooming : MonoBehaviour
     {
         if (handRight.grabGripAction.GetState(handRightsource) && handLeft.grabGripAction.GetState(handLeftsource) && !zooming)
         {
-            initialScale = transform.localScale;
-            initialPosition = transform.position;
-            initialDistanceControllers = Vector3.Distance(handLeft.transform.localPosition, handRight.transform.localPosition);
+            GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
+            initialScale = transform.localScale;
+            initialPosition = grabbingPlanet?.transform.position ?? transform.position;
+            initialDistanceControllers = Vector3.Distance(handLeft.transform.localPosition, handRight.transform.localPosition);
             
             initialCenterControllerPosition = Vector3.Lerp(handLeft.transform.position, handRight.transform.position, 0.5f);
-            Debug.Log("initialCenterControllerPosition" + initialCenterControllerPosition);
-            Debug.Log("Camera Position" + camera.transform.position);
             
             zooming = true;
         }
