@@ -11,7 +11,7 @@ namespace CelestialMechanics
         /// <param name="e">The eccentricity.</param>
         /// <param name="M">The true anomaly.</param>
         /// <returns>The computed eccentric anomaly.</returns>
-        public static double EccentricAnomaly(double e, double M, int iterations = 30)
+        public static double EccentricAnomaly(double e, double M, int iterations = 100)
         {
             var E = 0.0;
             for (int i = 0; i < iterations; i++)

@@ -6,8 +6,9 @@ using System;
 
 public class GrabCamera : MonoBehaviour
 {
-    public Camera Camera;
-    public GameObject World;
+    public GameObject Globals;
+    private Globals _globalsScript;
+
     public float GrabDistance = 1;
     public GameObject GrabSphere;
 
@@ -17,12 +18,13 @@ public class GrabCamera : MonoBehaviour
 
     void Start()
     {
+        _globalsScript = Globals.GetComponent<Globals>();
         _lastPosition = transform.localPosition;
     }
 
     void Update()
     {
-        var realGrabDistance = GrabDistance * World.transform.localScale.x;
+        var realGrabDistance = GrabDistance * _globalsScript.World.transform.localScale.x;
         
         var test = realGrabDistance / GrabSphere.transform.lossyScale.x * 2;
         var temp = GrabSphere.transform.localScale;
@@ -30,15 +32,15 @@ public class GrabCamera : MonoBehaviour
         GrabSphere.transform.localScale = temp;
         Debug.Log($"{name} \t{GrabSphere.transform.lossyScale.x}");
 
-        var distance = Vector3.Distance(transform.position, Camera.transform.position);
-        if (!(Camera is null) &&
-            !(World is null) &&
+        var distance = Vector3.Distance(transform.position, _globalsScript.Camera.transform.position);
+        if (!(_globalsScript.Camera is null) &&
+            !(_globalsScript.World is null) &&
             distance < realGrabDistance)
         {
             IsGrabbing = true;
             var translation = transform.localPosition - _lastPosition;
-            translation.Scale(World.transform.localScale);
-            World.transform.position -= translation;
+            translation.Scale(_globalsScript.World.transform.localScale);
+            _globalsScript.World.transform.position -= translation;
         }
         else
         {

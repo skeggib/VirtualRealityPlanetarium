@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class KeyboardZooming : MonoBehaviour
 {
-    public List<GameObject> Planets;
-    public Camera Camera;
-    public Light Light;
+    public GameObject Globals;
+    private Globals _globalsScript;
+
     public float MaxScale = 5000;
     public float MinScale = 0.1f;
 
@@ -15,13 +15,14 @@ public class KeyboardZooming : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _startRange = Light.range / transform.localScale.x;
+        _globalsScript = Globals.GetComponent<Globals>();
+        _startRange = _globalsScript.Sun.GetComponent<Light>().range / transform.localScale.x;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
+        GameObject grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
         var pivot = grabbingPlanet?.transform.position ?? transform.position;
 
@@ -38,7 +39,7 @@ public class KeyboardZooming : MonoBehaviour
         if (transform.localScale.x < MinScale)
             ScaleAround(transform, pivot, new Vector3(MinScale / transform.localScale.x, MinScale / transform.localScale.y, MinScale / transform.localScale.z));
         
-        Light.range = _startRange * transform.localScale.x;
+        _globalsScript.Sun.GetComponent<Light>().range = _startRange * transform.localScale.x;
     }
 
     public static void ScaleAround(Transform target, Vector3 pivot, Vector3 scale) {

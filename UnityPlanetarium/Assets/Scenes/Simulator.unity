@@ -239,18 +239,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be540b97364be0a4890e39e62ac89ed1, type: 3}
---- !u!1 &427766124 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980469000001505707, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 757136359}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &605551489 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980469000198611270, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 757136359}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &757136359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -343,11 +331,6 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 1183882625}
-    - target: {fileID: 1881241673337351017, guid: d45541dadfcd7bd46bd67416a63ceca3,
-        type: 3}
-      propertyPath: GrabDistance
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 1881241673799865752, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: Camera
@@ -366,18 +349,23 @@ PrefabInstance:
     - target: {fileID: 2819596639465982581, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7573960692145139601, guid: d45541dadfcd7bd46bd67416a63ceca3,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.74
       objectReference: {fileID: 0}
+    - target: {fileID: 5782277595212876659, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 1183882625}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d45541dadfcd7bd46bd67416a63ceca3, type: 3}
---- !u!1 &1142137244 stripped
+--- !u!1 &757136360 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980468998808680988, guid: d45541dadfcd7bd46bd67416a63ceca3,
+  m_CorrespondingSourceObject: {fileID: 6196017512674184351, guid: d45541dadfcd7bd46bd67416a63ceca3,
     type: 3}
   m_PrefabInstance: {fileID: 757136359}
   m_PrefabAsset: {fileID: 0}
@@ -386,18 +374,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 20938510069535118, guid: be540b97364be0a4890e39e62ac89ed1,
     type: 3}
   m_PrefabInstance: {fileID: 376891490}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1395930736 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1125668216357150464, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 757136359}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1484439909 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980468999419692269, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 757136359}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1979927350 stripped
 GameObject:
@@ -417,12 +393,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90812c0f3dfc18543a1c4104ef43ddb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planets:
-  - {fileID: 427766124}
-  - {fileID: 1484439909}
-  - {fileID: 605551489}
-  - {fileID: 1142137244}
-  Camera: {fileID: 1183882625}
-  Light: {fileID: 1395930736}
+  Globals: {fileID: 757136360}
   MaxScale: 5000
   MinScale: 0.1

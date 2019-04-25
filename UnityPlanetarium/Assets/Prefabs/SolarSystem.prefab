@@ -36,6 +36,7 @@ Transform:
   - {fileID: 812525456032712518}
   - {fileID: 906276476438402031}
   - {fileID: 7573960692145139601}
+  - {fileID: 4595475905797211656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -183,6 +184,57 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SizeKm: 695510
+--- !u!1 &6196017512674184351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4595475905797211656}
+  - component: {fileID: 5782277595212876659}
+  m_Layer: 0
+  m_Name: Globals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4595475905797211656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196017512674184351}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 2690437687978721812}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5782277595212876659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6196017512674184351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7bd6321801f9bf43a670bb89e3c8a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 0}
+  World: {fileID: 2690437687978721815}
+  Sun: {fileID: 2690437688734652075}
+  Planets:
+  - {fileID: 7980469000001505707}
+  - {fileID: 7980468999419692269}
+  - {fileID: 7980469000198611270}
+  - {fileID: 7980468998808680988}
 --- !u!114 &8332792921719409296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,6 +359,11 @@ PrefabInstance:
       propertyPath: Planet
       value: 
       objectReference: {fileID: 7980469000001505707}
+    - target: {fileID: 498893771511846156, guid: ad060fc45e7cc71409e6011ff4613a10,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad060fc45e7cc71409e6011ff4613a10, type: 3}
 --- !u!4 &2109942965576113396 stripped
@@ -387,6 +444,11 @@ PrefabInstance:
       propertyPath: Planet
       value: 
       objectReference: {fileID: 7980469000198611270}
+    - target: {fileID: 498893771511846156, guid: ad060fc45e7cc71409e6011ff4613a10,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad060fc45e7cc71409e6011ff4613a10, type: 3}
 --- !u!4 &906276476438402031 stripped
@@ -467,6 +529,11 @@ PrefabInstance:
       propertyPath: Planet
       value: 
       objectReference: {fileID: 7980468999419692269}
+    - target: {fileID: 498893771511846156, guid: ad060fc45e7cc71409e6011ff4613a10,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad060fc45e7cc71409e6011ff4613a10, type: 3}
 --- !u!4 &812525456032712518 stripped
@@ -567,6 +634,11 @@ PrefabInstance:
       propertyPath: World
       value: 
       objectReference: {fileID: 2690437687978721815}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     - target: {fileID: 604614199808832685, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: MajorRadius
@@ -708,6 +780,11 @@ PrefabInstance:
       propertyPath: World
       value: 
       objectReference: {fileID: 2690437687978721815}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     - target: {fileID: 604614199808832685, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: MajorRadius
@@ -854,6 +931,11 @@ PrefabInstance:
       propertyPath: World
       value: 
       objectReference: {fileID: 2690437687978721815}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     - target: {fileID: 604614199808832685, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: MeanLongitudeAtEpoch
@@ -876,15 +958,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c3070d53960b5384cb4b7cd3ea08368a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b17b52d163ddc7941917bd429e9aead0, type: 3}
---- !u!4 &63624114094963063 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
-    type: 3}
-  m_PrefabInstance: {fileID: 2690437688420351827}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7980469000198611270 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5446550245280636437, guid: b17b52d163ddc7941917bd429e9aead0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2690437688420351827}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &63624114094963063 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2716887845730600484, guid: b17b52d163ddc7941917bd429e9aead0,
     type: 3}
   m_PrefabInstance: {fileID: 2690437688420351827}
   m_PrefabAsset: {fileID: 0}
@@ -975,6 +1057,11 @@ PrefabInstance:
       propertyPath: World
       value: 
       objectReference: {fileID: 2690437687978721815}
+    - target: {fileID: 4561541172541640544, guid: b17b52d163ddc7941917bd429e9aead0,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     - target: {fileID: 604614199808832685, guid: b17b52d163ddc7941917bd429e9aead0,
         type: 3}
       propertyPath: MajorRadius
@@ -1101,6 +1188,11 @@ PrefabInstance:
       propertyPath: Planet
       value: 
       objectReference: {fileID: 7980468998808680988}
+    - target: {fileID: 498893771511846156, guid: ad060fc45e7cc71409e6011ff4613a10,
+        type: 3}
+      propertyPath: Globals
+      value: 
+      objectReference: {fileID: 6196017512674184351}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad060fc45e7cc71409e6011ff4613a10, type: 3}
 --- !u!4 &7573960692145139601 stripped

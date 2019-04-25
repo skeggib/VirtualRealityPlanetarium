@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 [RequireComponent(typeof(Camera))]
 public class FreeFlyCamera : MonoBehaviour
@@ -56,12 +57,14 @@ public class FreeFlyCamera : MonoBehaviour
     private Vector3 _initPosition;
     private Vector3 _initRotation;
 
-    public List<GameObject> Objects;
+    public GameObject Globals;
+    private Globals _globalsScript;
 
     private void Start()
     {
         _initPosition = transform.position;
         _initRotation = transform.eulerAngles;
+        _globalsScript = Globals.GetComponent<Globals>();
     }
 
     private void OnEnable()
@@ -120,17 +123,7 @@ public class FreeFlyCamera : MonoBehaviour
             Vector3 deltaPosition = Vector3.zero;
             float currentSpeed = _movementSpeed;
 
-            GameObject closestPanet = Objects[0];
-            float closestDistance = Vector3.Distance(closestPanet.transform.position, transform.position);
-            for (int i = 1; i < Objects.Count; i++)
-            {
-                var distance = Vector3.Distance(Objects[i].transform.position, transform.position);
-                if (distance < closestDistance)
-                {
-                    closestPanet = Objects[i];
-                    closestDistance = distance;
-                }
-            }
+            var closestDistance = _globalsScript.Planets.Min(planet => Vector3.Distance(planet.transform.position, transform.position));
             double factor = 1 / (1 + Math.Exp(-7 * (closestDistance - 0.5)));
             currentSpeed *= (float)factor;
 

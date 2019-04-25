@@ -6,15 +6,17 @@ using System;
 
 public class OrbitLine : MonoBehaviour
 {
-    public GameObject Planet;
+    public GameObject Globals;
+    private Globals _globalsScript;
 
-    public Camera Camera;
+    public GameObject Planet;
     
     private Orbit _orbit;
 
     // Start is called before the first frame update
     void Start()
     {
+        _globalsScript = Globals.GetComponent<Globals>();
         var movePlanet = Planet.GetComponent<MovePlanet>();
         var elements = new OrbitalElements(
             movePlanet.MajorRadius,
@@ -36,7 +38,7 @@ public class OrbitLine : MonoBehaviour
         // if (grabCamera is null || !grabCamera.Grabbing)
         // {
             var movePlanet = Planet.GetComponent<MovePlanet>();
-            var distance = Vector3.Distance(Planet.transform.position, Camera.transform.position);
+            var distance = Vector3.Distance(Planet.transform.position, _globalsScript.Camera.transform.position);
             var pointsToDraw = _orbit.OrbitPoints(movePlanet.Year, movePlanet.OrbitalPeriod * 0.3f, 1000);
             lineRenderer.positionCount = pointsToDraw.Length+1;
             for(int i = 0; i < pointsToDraw.Length; i++)

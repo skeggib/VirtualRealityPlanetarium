@@ -112,12 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &355551845 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980469000198611270, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2690437688267708206}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,14 +218,10 @@ MonoBehaviour:
   _enableSpeedAcceleration: 0
   _speedAccelerationFactor: 1.5
   _initPositonButton: 114
-  Objects:
-  - {fileID: 7980469000001505707}
-  - {fileID: 816360559}
-  - {fileID: 355551845}
-  - {fileID: 985181427}
---- !u!1 &816360559 stripped
+  Globals: {fileID: 746652592}
+--- !u!1 &746652592 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980468999419692269, guid: d45541dadfcd7bd46bd67416a63ceca3,
+  m_CorrespondingSourceObject: {fileID: 6196017512674184351, guid: d45541dadfcd7bd46bd67416a63ceca3,
     type: 3}
   m_PrefabInstance: {fileID: 2690437688267708206}
   m_PrefabAsset: {fileID: 0}
@@ -253,27 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90812c0f3dfc18543a1c4104ef43ddb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planets:
-  - {fileID: 7980469000001505707}
-  - {fileID: 816360559}
-  - {fileID: 355551845}
-  - {fileID: 985181427}
-  Camera: {fileID: 534669904}
-  Light: {fileID: 1379422302}
+  Globals: {fileID: 746652592}
   MaxScale: 5000
   MinScale: 0.1
---- !u!1 &985181427 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7980468998808680988, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2690437688267708206}
-  m_PrefabAsset: {fileID: 0}
---- !u!108 &1379422302 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 1125668216357150464, guid: d45541dadfcd7bd46bd67416a63ceca3,
-    type: 3}
-  m_PrefabInstance: {fileID: 2690437688267708206}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2690437688267708206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,6 +418,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3231712755455255148, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 5782277595212876659, guid: d45541dadfcd7bd46bd67416a63ceca3,
+        type: 3}
+      propertyPath: Camera
+      value: 
+      objectReference: {fileID: 534669904}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d45541dadfcd7bd46bd67416a63ceca3, type: 3}
 --- !u!1 &7980469000001505707 stripped
