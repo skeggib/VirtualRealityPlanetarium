@@ -39,7 +39,7 @@ public class OrbitLine : MonoBehaviour
         // {
             var movePlanet = Planet.GetComponent<MovePlanet>();
             var distance = Vector3.Distance(Planet.transform.position, _globalsScript.Camera.transform.position);
-            var pointsToDraw = _orbit.OrbitPoints(movePlanet.Year, movePlanet.OrbitalPeriod * 0.3f, 1000);
+            var pointsToDraw = _orbit.OrbitPoints(_globalsScript.GetComponent<TimeManipulation>().Year, movePlanet.OrbitalPeriod * 0.3f, 1000);
             lineRenderer.positionCount = pointsToDraw.Length+1;
             for(int i = 0; i < pointsToDraw.Length; i++)
                 lineRenderer.SetPosition(i, pointsToDraw[i]);

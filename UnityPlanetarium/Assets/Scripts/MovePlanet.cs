@@ -6,6 +6,9 @@ using System;
 
 public class MovePlanet : MonoBehaviour
 {
+    public GameObject Globals;
+    private Globals _globalsScript;
+
     public float MajorRadius;
     public float MeanLongitudeAtEpoch;
     public float Eccentricity;
@@ -14,15 +17,13 @@ public class MovePlanet : MonoBehaviour
     public float LongitudeOfAscendingNode;
     public float OrbitalPeriod;
 
-    public float Year { get; private set; }
-
-    private DateTime _startDate;
     private Orbit _orbit;
 
     // Start is called before the first frame update
     void Start()
     {
-        _startDate = DateTime.Now;
+        _globalsScript = Globals.GetComponent<Globals>();
+
         var elements = new OrbitalElements(
             MajorRadius,
             MeanLongitudeAtEpoch,
@@ -37,8 +38,7 @@ public class MovePlanet : MonoBehaviour
     // Update is called once per frame
     void Update()
 	{
-        Year = (float)(DateTime.Now-_startDate).TotalSeconds / 100;
-		var pos = _orbit.Position(Year);
+		var pos = _orbit.Position(_globalsScript.GetComponent<TimeManipulation>().Year);
         pos.Scale(transform.parent.localScale);
         transform.position = transform.parent.position + pos;
     }
