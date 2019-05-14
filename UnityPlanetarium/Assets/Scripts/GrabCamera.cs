@@ -30,7 +30,6 @@ public class GrabCamera : MonoBehaviour
         var temp = GrabSphere.transform.localScale;
         temp.Scale(new Vector3(test, test, test));
         GrabSphere.transform.localScale = temp;
-        Debug.Log($"{name} \t{GrabSphere.transform.lossyScale.x}");
 
         var distance = Vector3.Distance(transform.position, _globalsScript.Camera.transform.position);
         if (!(_globalsScript.Camera is null) &&
