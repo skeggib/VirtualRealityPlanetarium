@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 8959699838241605206}
   - component: {fileID: 604614199808832685}
   - component: {fileID: 4561541172541640544}
+  - component: {fileID: 1218320377852484482}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Untagged
@@ -220,3 +221,16 @@ MonoBehaviour:
   Globals: {fileID: 0}
   GrabDistance: 0.2
   GrabSphere: {fileID: 3405130764769120931}
+--- !u!114 &1218320377852484482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5446550245280636437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 261d5ac81efeb8543acd7163d0cbc5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SizeKm: 0
