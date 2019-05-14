@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d595d68fe142c5a499911292b3824d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  YearsPerSecond: 0.1
+  YearsPerSecond: 0.01
   Year: 0
 --- !u!114 &8332792921719409296
 MonoBehaviour:

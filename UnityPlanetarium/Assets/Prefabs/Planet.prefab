@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1885856925516488536
 Transform:
   m_ObjectHideFlags: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6a1317447854da438b606886c101c1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Globals: {fileID: 0}
   MajorRadius: 1
   MeanLongitudeAtEpoch: 0
   Eccentricity: 0
@@ -216,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae90ecca9a8cff4c954bd4126488f5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
-  World: {fileID: 0}
+  Globals: {fileID: 0}
   GrabDistance: 0.2
   GrabSphere: {fileID: 3405130764769120931}
