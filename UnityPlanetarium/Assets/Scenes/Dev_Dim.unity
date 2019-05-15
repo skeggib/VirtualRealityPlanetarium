@@ -1361,7 +1361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Globals: {fileID: 773192603}
   MaxScale: 5000
-  MinScale: 0.1
+  MinScale: 0.01
 --- !u!1 &1761847527
 GameObject:
   m_ObjectHideFlags: 0
