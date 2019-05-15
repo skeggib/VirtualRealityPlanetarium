@@ -9,6 +9,7 @@ public class AccessTime : MonoBehaviour
     Hand hand;
     public GameObject Globals;
     private Globals _globalsScript;
+    private bool _pressed;
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +30,32 @@ public class AccessTime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SteamVR_Actions._default.touchpadPress.GetStateDown(hand.handType))
+        if (SteamVR_Actions._default.GrabPinch.GetLastStateDown(hand.handType)) {
+            _globalsScript.GetComponent<TimeManipulation>()._pause = !_globalsScript.GetComponent<TimeManipulation>()._pause;
+        }
+        if (!_globalsScript.GetComponent<TimeManipulation>()._pause)
         {
-            Debug.Log("TrackPad clicked");
-            Debug.Log(getTrackpadPosition().x);
-            if (getTrackpadPosition().x > 0)
+            if (SteamVR_Actions._default.touchpadPress.GetStateDown(hand.handType))
             {
-                Debug.Log("Plus");
-                _globalsScript.GetComponent<TimeManipulation>().YearsPerSecond *= 1.01f;
+                _pressed = true;
+
             }
-            else
+            if (SteamVR_Actions._default.touchpadPress.GetStateUp(hand.handType))
             {
-                Debug.Log("Moins");
-                _globalsScript.GetComponent<TimeManipulation>().YearsPerSecond *= 0.99f;
+                _pressed = false;
+            }
+            if (_pressed)
+            {
+                if (getTrackpadPosition().x > 0)
+                {
+                    Debug.Log("plusgauche");
+                    _globalsScript.GetComponent<TimeManipulation>().YearsPerSecond *= 1.01f;
+                }
+                else
+                {
+                    Debug.Log("Moinsgauche");
+                    _globalsScript.GetComponent<TimeManipulation>().YearsPerSecond *= 0.99f;
+                }
             }
         }
     }

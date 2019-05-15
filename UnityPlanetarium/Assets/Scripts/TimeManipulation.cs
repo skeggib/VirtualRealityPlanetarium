@@ -10,8 +10,8 @@ public class TimeManipulation : MonoBehaviour
 
     public float Year;
 
-    private bool _pause;
-    private bool _pausePressed;
+    public bool _pause;
+    public bool _pausePressed;
 
 
     // Start is called before the first frame update
