@@ -41,6 +41,14 @@
       "requirement": "optional"
     },
     {
+      "name": "/actions/default/in/touchpadPos",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/touchpadPress",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/default/out/Haptic",
       "type": "vibration"
     },
@@ -64,6 +72,14 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/trackpadGUI/in/NavigateClick",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/trackpadGUI/in/Navigate",
+      "type": "vector2"
     }
   ],
   "action_sets": [
@@ -77,6 +93,10 @@
     },
     {
       "name": "/actions/mixedreality",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/trackpadGUI",
       "usage": "single"
     }
   ],
