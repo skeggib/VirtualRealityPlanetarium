@@ -64,17 +64,19 @@ public class ZoomVR : MonoBehaviour
             if (getTrackpadPosition().y > 0)
             {
                 Debug.Log("Plus");
+
                 ScaleAround(_globalsScript.World.transform, pivot, one + mult);
 
-                if (transform.localScale.x > MaxScale)
+                if (_globalsScript.World.transform.localScale.x > MaxScale)
                     ScaleAround(_globalsScript.World.transform, pivot, new Vector3(MaxScale / _globalsScript.World.transform.localScale.x, MaxScale / _globalsScript.World.transform.localScale.y, MaxScale / _globalsScript.World.transform.localScale.z));
             }
             else
             {
                 Debug.Log("Moins");
+
                 ScaleAround(_globalsScript.World.transform, pivot, one - mult);
 
-                if (transform.localScale.x < MinScale)
+                if (_globalsScript.World.transform.localScale.x < MinScale)
                     ScaleAround(_globalsScript.World.transform, pivot, new Vector3(MinScale / _globalsScript.World.transform.localScale.x, MinScale / _globalsScript.World.transform.localScale.y, MinScale / _globalsScript.World.transform.localScale.z));
             }
         }
