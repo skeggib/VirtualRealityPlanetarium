@@ -24,12 +24,11 @@ public class motionGrabbing : MonoBehaviour
             Debug.LogError("No hand found.");
     }
 
+
     // Update is called once per frame
     void Update()
     {
-        //axe bleu = z
-        //axe vert = y
-        //axe rouge = x
+
         if (SteamVR_Actions._default.GrabPinch.GetLastStateDown(hand.handType))
         {
             GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);

@@ -67,6 +67,12 @@ public class SteamVRZooming : MonoBehaviour
         Vector3 newScale = new Vector3(initialScale.x * scale, initialScale.y * scale, initialScale.z * scale);
         transform.localScale =  newScale;
 
-        transform.position = initialPosition + initialCenterControllerPosition - new Vector3(initialPosition.x - initialCenterControllerPosition.x * scale, initialPosition.y - initialCenterControllerPosition.y * scale, initialPosition.y - initialCenterControllerPosition.y * scale);
+        Vector3 Pi = initialPosition;
+        Vector3 Ps = initialCenterControllerPosition;
+
+        //transform.position = new Vector3(Pi.x + (Pi - Ps).normalized.x * scale, Pi.y + (Pi - Ps).normalized.y * scale, Pi.z + (Pi - Ps).normalized.z * scale);
+
+        //transform.position = Pi + Ps - new Vector3((Pi.x - Ps.x) * scale, (Pi.y - Ps.y) * scale, (Pi.z - Ps.z) * scale);
+        //transform.position = initialPosition - new Vector3((initialCenterControllerPosition.x - initialPosition.x) * scale, (initialCenterControllerPosition.y - initialPosition.y) * scale, (initialCenterControllerPosition.z - initialPosition.z) * scale);
     }
 }
