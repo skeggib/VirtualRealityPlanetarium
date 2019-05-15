@@ -10,15 +10,18 @@ public class motionGrabbing : MonoBehaviour
 
     public GameObject universe;
 
+    public GameObject Globals;
+    private Globals _globalsScript;
+
     Vector3 positionPre;
     Vector3 positionUniverse;
-    public List<GameObject> Planets;
 
     bool moving = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        _globalsScript = Globals.GetComponent<Globals>();
         hand = gameObject.GetComponent<Hand>();
         if (hand is null)
             Debug.LogError("No hand found.");
@@ -31,8 +34,9 @@ public class motionGrabbing : MonoBehaviour
 
         if (SteamVR_Actions._default.GrabPinch.GetLastStateDown(hand.handType))
         {
-            GameObject grabbingPlanet = Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
-            positionUniverse = grabbingPlanet?.transform.position ?? universe.transform.position;
+            GameObject grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
+            positionUniverse =  universe.transform.position;
+            
             positionPre = new Vector3(transform.position.x, transform.position.y, transform.position.z);
 
             moving = true;

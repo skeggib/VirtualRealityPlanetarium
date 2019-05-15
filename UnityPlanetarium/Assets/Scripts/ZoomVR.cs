@@ -22,7 +22,7 @@ public class ZoomVR : MonoBehaviour
     void Start()
     {
         _globalsScript = Globals.GetComponent<Globals>();
-        _startRange = _globalsScript.Sun.GetComponent<Light>().range / transform.localScale.x;
+        _startRange = _globalsScript.Sun.GetComponent<Light>().range / _globalsScript.World.transform.localScale.x;
 
         hand = gameObject.GetComponent<Hand>();
         if (hand is null)
@@ -41,7 +41,7 @@ public class ZoomVR : MonoBehaviour
     {
         GameObject grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
-        var pivot = grabbingPlanet?.transform.position ?? transform.position;
+        var pivot = grabbingPlanet?.transform.position ?? _globalsScript.World.transform.position;
 
         var one = new Vector3(1, 1, 1);
         var scale = Time.deltaTime * 3;
@@ -53,7 +53,7 @@ public class ZoomVR : MonoBehaviour
             
             zooming = true;
 
-            _globalsScript.Sun.GetComponent<Light>().range = _startRange * transform.localScale.x;
+            _globalsScript.Sun.GetComponent<Light>().range = _startRange * _globalsScript.World.transform.localScale.x;
         }
         if (SteamVR_Actions._default.touchpadPress.GetStateUp(hand.handType))
         {
@@ -64,18 +64,18 @@ public class ZoomVR : MonoBehaviour
             if (getTrackpadPosition().y > 0)
             {
                 Debug.Log("Plus");
-                ScaleAround(transform, pivot, one + mult);
+                ScaleAround(_globalsScript.World.transform, pivot, one + mult);
 
                 if (transform.localScale.x > MaxScale)
-                    ScaleAround(transform, pivot, new Vector3(MaxScale / transform.localScale.x, MaxScale / transform.localScale.y, MaxScale / transform.localScale.z));
+                    ScaleAround(_globalsScript.World.transform, pivot, new Vector3(MaxScale / _globalsScript.World.transform.localScale.x, MaxScale / _globalsScript.World.transform.localScale.y, MaxScale / _globalsScript.World.transform.localScale.z));
             }
             else
             {
                 Debug.Log("Moins");
-                ScaleAround(transform, pivot, one - mult);
+                ScaleAround(_globalsScript.World.transform, pivot, one - mult);
 
                 if (transform.localScale.x < MinScale)
-                    ScaleAround(transform, pivot, new Vector3(MinScale / transform.localScale.x, MinScale / transform.localScale.y, MinScale / transform.localScale.z));
+                    ScaleAround(_globalsScript.World.transform, pivot, new Vector3(MinScale / _globalsScript.World.transform.localScale.x, MinScale / _globalsScript.World.transform.localScale.y, MinScale / _globalsScript.World.transform.localScale.z));
             }
         }
     }

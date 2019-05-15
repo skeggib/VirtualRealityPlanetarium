@@ -12,7 +12,7 @@ public class Size : MonoBehaviour
     void Start()
     {
         var scale = SizeKm / AstronomicalUnit;
-        transform.localScale = new Vector3(scale, scale, scale);
+        //transform.localScale = new Vector3(scale, scale, scale);
     }
 
     // Update is called once per frame
