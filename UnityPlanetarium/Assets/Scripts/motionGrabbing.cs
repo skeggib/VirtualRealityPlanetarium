@@ -13,8 +13,9 @@ public class motionGrabbing : MonoBehaviour
     public GameObject Globals;
     private Globals _globalsScript;
 
-    Vector3 positionPre;
-    Vector3 positionUniverse;
+    Vector3 _controllerStartPosition;
+    Vector3 _initialUniversePosition;
+    Vector3 _lastUniversePosition;
 
     bool moving = false;
 
@@ -25,32 +26,40 @@ public class motionGrabbing : MonoBehaviour
         hand = gameObject.GetComponent<Hand>();
         if (hand is null)
             Debug.LogError("No hand found.");
+        _lastUniversePosition = universe.transform.position;
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        var controllerCurrentPosition = transform.position;
+        var grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
         if (SteamVR_Actions._default.GrabPinch.GetLastStateDown(hand.handType))
         {
-            GameObject grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
-            positionUniverse =  universe.transform.position;
-            
-            positionPre = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            _initialUniversePosition = universe.transform.position;
+            _controllerStartPosition = new Vector3(controllerCurrentPosition.x, controllerCurrentPosition.y, controllerCurrentPosition.z);
 
             moving = true;
         }
+
         if (SteamVR_Actions._default.GrabPinch.GetStateUp(hand.handType))
         {
             moving = false;
         }
 
+        if (!(grabbingPlanet is null))
+        {
+            _initialUniversePosition += universe.transform.position - _lastUniversePosition;
+        }
+
         if (moving)
         {
-            Vector3 move = transform.position - positionPre;
-
-            universe.transform.position = positionUniverse + move;
+            var move = controllerCurrentPosition - _controllerStartPosition;
+            universe.transform.position = _initialUniversePosition + move;
         }
+            
+        _lastUniversePosition = universe.transform.position;
     }
 }

@@ -1,0 +1,10 @@
+- Agrandir sphère de grab pour les planètes extérieures
+- Multiplier déplacement : loin des planètes
+- Revoir le texte en VR
+    - nom planètes
+    - temps par seconde
+    - controles
+- Grab par 2 planètes : choisir la plus proche
+- Lors du zoom + grab d'un planète : reculer la position de l'utilisateur autant que le zoom effectué
+- Après zoom, revoir les distances d'affichages des autres objects
+- Afficher la sphère de grabbing de la planète la plus proche
