@@ -5,6 +5,8 @@ using UnityEngine;
 public class TimeManipulation : MonoBehaviour
 {
     public float YearsPerSecond = 0.1f;
+    private float _min = 1f / 365f / 24f;
+    private float _max = 1;
 
     public float Year;
 
@@ -37,10 +39,10 @@ public class TimeManipulation : MonoBehaviour
             if (Input.GetKey(KeyCode.H))
                 YearsPerSecond *= 1.01f;
 
-            if (YearsPerSecond < 0.01)
-                YearsPerSecond = 0.01f;
-            else if (YearsPerSecond > 1)
-                YearsPerSecond = 1f;
+            if (YearsPerSecond < _min)
+                YearsPerSecond = _min;
+            else if (YearsPerSecond > _max)
+                YearsPerSecond = _max;
 
             var delta = Time.deltaTime; // seconds
             var elapsedTime = delta * YearsPerSecond;

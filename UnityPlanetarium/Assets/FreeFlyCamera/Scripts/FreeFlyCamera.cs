@@ -124,7 +124,7 @@ public class FreeFlyCamera : MonoBehaviour
             float currentSpeed = _movementSpeed;
 
             var closestDistance = _globalsScript.Planets.Min(planet => Vector3.Distance(planet.transform.position, transform.position));
-            double factor = 1 / (1 + Math.Exp(-7 * (closestDistance - 0.5)));
+            double factor = closestDistance;//(1 + Math.Exp(-7 * (closestDistance - 0.5)));
             currentSpeed *= (float)factor;
 
             if (Input.GetKey(KeyCode.Z))
