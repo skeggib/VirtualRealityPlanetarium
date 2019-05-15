@@ -31,9 +31,12 @@ public class GrabCamera : MonoBehaviour
         temp.Scale(new Vector3(test, test, test));
         GrabSphere.transform.localScale = temp;
 
+        var grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>().IsGrabbing);
+
         var distance = Vector3.Distance(transform.position, _globalsScript.Camera.transform.position);
         if (!(_globalsScript.Camera is null) &&
             !(_globalsScript.World is null) &&
+            (grabbingPlanet is null || grabbingPlanet == gameObject) &&
             distance < realGrabDistance)
         {
             IsGrabbing = true;
