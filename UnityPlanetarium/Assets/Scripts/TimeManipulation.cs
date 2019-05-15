@@ -6,8 +6,8 @@ using Valve.VR.InteractionSystem;
 
 public class TimeManipulation : MonoBehaviour
 {
-    public float YearsPerSecond = 0.1f;
-    private float _min = 1f / 365f / 24f;
+    public float YearsPerSecond = 1f / 365.25f * 10f;
+    private float _min = 1f / 365.25f / 24f;
     private float _max = 1;
 
     public float Year;
