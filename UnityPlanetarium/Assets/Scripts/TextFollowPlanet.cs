@@ -18,7 +18,6 @@ public class TextFollowPlanet : MonoBehaviour
     {
         var camera = Globals.GetComponent<Globals>().Camera;
         var behind = Vector3.Dot((Planet.transform.position - camera.transform.position), camera.transform.forward) < 0;
-        Debug.Log($"{Planet.name} {behind}");
 
         var position = camera.WorldToScreenPoint(Planet.transform.position);
         position.x += GetComponent<RectTransform>().sizeDelta.x / 2f;
