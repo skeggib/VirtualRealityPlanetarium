@@ -10,3 +10,4 @@ Columns:
 - `omega`: longitude of perihelion (°)
 - `Omega`: longitude of ascending node (°)
 - `T`: orbital period (years)
+- `P`: day duration (Earth days)
