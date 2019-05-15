@@ -41,7 +41,7 @@ public class ZoomVR : MonoBehaviour
     {
         GameObject grabbingPlanet = _globalsScript.Planets.Find(planet => planet.GetComponent<GrabCamera>()?.IsGrabbing ?? false);
 
-        var pivot = grabbingPlanet?.transform.position ?? _globalsScript.World.transform.position;
+        var pivot = transform.position;//grabbingPlanet?.transform.position ?? _globalsScript.World.transform.position;
 
         var one = new Vector3(1, 1, 1);
         var scale = Time.deltaTime * 3;
